@@ -2,8 +2,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
+	text-decoration: none;
 
+}
+a{
+	color: #868e96 !important;
+	text-decoration: none !important;
+}
 :root {
 	--index: calc(1vw + 1vh);
 	--gutter: 30px;
@@ -54,6 +59,42 @@ body {
 	perspective: 1500px;
 	z-index: 10000;
 }
+/* nav */
+.nav{
+	width: 10%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000;
+}
+ul{
+ list-style-type: none;
+
+}
+li{
+	display: flex;
+	align-items: center;
+	color: #868e96;
+}
+
+.icon{
+    content: '';
+	width: 26px;
+	height: 26px;
+    background: hsla(0,0%,100%,.2);
+    color: #868e96;
+    border-radius: 50%;
+	margin-right: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.icon>i{
+	font-size: 13px;
+}
 
 .gallery {
 	transform-style: preserve-3d;
@@ -74,6 +115,9 @@ body {
 	background: transparent;
 
 }
+.frame__content{
+	font-size: 20px;
+}
 
 h1,
 h2,
@@ -83,11 +127,14 @@ h4 {
 	text-transform: uppercase;
 	width: min-content;
 	line-height: 1;
+	
 }
 
 .frame h2 {
 	text-align: center;
 	font-size: calc(var(--index) * 3.3);
+	color: #fff;
+	
 }
 
 .frame-media {
@@ -125,20 +172,24 @@ video.frame-media_left {
 .text-right>* {
 	position: relative;
 	left: 18vw;
+	color: #fff;
 }
 
 .text-left>* {
 	position: relative;
 	right: 18vw;
+	color: #fff;
 }
 
 .frame h3 {
 	font-size: calc(var(--index) * 3);
+	color: #fff;
 }
 
 .frame p {
 	max-width: 30vw;
 	margin-top: 3vh;
+	color: #fff;
 }
 
 .soundbutton {
@@ -175,4 +226,4 @@ canvas {
 
 }
 
-/* ---- stats.js ---- *
+
