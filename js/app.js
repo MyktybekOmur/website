@@ -6,12 +6,12 @@ let zSpacing = -1000,
   frames = Array.from($frames),
   zVals = [];
 
+const li = document.getElementsByClassName("links");
+const sec = document.getSelection("section");
 window.onscroll = function () {
   let top = document.documentElement.scrollTop,
     delta = lastPos - top;
-
   lastPos = top;
-
   frames.forEach(function (n, i) {
     zVals.push(i * zSpacing + zSpacing);
     zVals[i] += delta * -5.5;
@@ -19,10 +19,61 @@ window.onscroll = function () {
       transform = `translateZ(${zVals[i]}px)`,
       opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
     frame.setAttribute("style", `transform: ${transform}; opacity: ${opacity}`);
+    if (zVals[0] <= 120 && zVals[0] <= 689) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[0].classList.add("active");
+    } else if (zVals[0] >= 690 && zVals[0] <= 1656) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[1].classList.add("active");
+    } else if (zVals[0] >= 1656 && zVals[0] <= 2613) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[2].classList.add("active");
+    }
+    else if (zVals[0] >= 2614 && zVals[0] <= 3120) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[3].classList.add("active");
+    }
+    else if (zVals[0] >= 3614 && zVals[0] <= 4120) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[4].classList.add("active");
+    }
+    else if (zVals[0] >= 4656 && zVals[0] <= 5120) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[5].classList.add("active");
+    }
+    else if (zVals[0] >= 6656 && zVals[0] <= 8120) {
+      for (let item of li) {
+        item.classList.remove("active");
+      }
+      li[6].classList.add("active");
+    }
   });
+
+  // while(--len && window.screenTop + 97 <sec[len].offsetTop){
+  //   li.forEach(ltx => ltx.classList.remove("active"));
+  //
+  //   console.log(le[len])
+  // }
 };
 
 window.scrollTo(0, 1);
+
+function activeMenu() {}
+activeMenu();
+
+window.addEventListener("scroll", activeMenu);
 
 // Audio
 
@@ -41,7 +92,7 @@ window.onfocus = function () {
 window.onblur = function () {
   audio.pause();
 };
-
+// particles js
 particlesJS("particles-js", {
   particles: {
     number: { value: 120, density: { enable: true, value_area: 800 } },

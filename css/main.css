@@ -79,6 +79,7 @@ li{
 	color: #868e96;
 }
 
+
 .icon{
     content: '';
 	width: 26px;
@@ -91,6 +92,12 @@ li{
 	justify-content: center;
 	align-items: center;
 
+}
+.active{
+	color: #fff !important;
+}
+.active>*{
+	color: #fff !important;
 }
 .icon>i{
 	font-size: 13px;
